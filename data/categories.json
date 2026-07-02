@@ -1,0 +1,47 @@
+[
+  {
+    "id": "eletronicos",
+    "nome": "Eletrônicos",
+    "ordem": 1
+  },
+  {
+    "id": "casa",
+    "nome": "Casa",
+    "ordem": 2
+  },
+  {
+    "id": "tecnologia",
+    "nome": "Tecnologia",
+    "ordem": 3
+  },
+  {
+    "id": "fitness",
+    "nome": "Fitness",
+    "ordem": 4
+  },
+  {
+    "id": "beleza",
+    "nome": "Beleza",
+    "ordem": 5
+  },
+  {
+    "id": "games",
+    "nome": "Games",
+    "ordem": 6
+  },
+  {
+    "id": "ferramentas",
+    "nome": "Ferramentas",
+    "ordem": 7
+  },
+  {
+    "id": "roupa-masculina",
+    "nome": "Roupa Masculina",
+    "ordem": 8
+  },
+  {
+    "id": "roupa-faminina",
+    "nome": "Roupa Faminina",
+    "ordem": 9
+  }
+]

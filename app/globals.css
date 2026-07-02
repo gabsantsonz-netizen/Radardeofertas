@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-space-grotesk), var(--font-geist-sans);
+  --font-sans: var(--font-geist-sans), 'Geist Fallback';
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --color-radar: var(--radar);
+  --color-radar-foreground: var(--radar-foreground);
+  --color-promo: var(--promo);
+  --color-promo-foreground: var(--promo-foreground);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Fundo preto e tons escuros */
+  --background: oklch(0.16 0.01 160);
+  --foreground: oklch(0.98 0 0);
+
+  --card: oklch(0.21 0.012 165);
+  --card-foreground: oklch(0.98 0 0);
+
+  --popover: oklch(0.19 0.012 165);
+  --popover-foreground: oklch(0.98 0 0);
+
+  /* Verde neon = cor principal */
+  --primary: oklch(0.85 0.24 145);
+  --primary-foreground: oklch(0.16 0.02 160);
+
+  --secondary: oklch(0.26 0.015 165);
+  --secondary-foreground: oklch(0.98 0 0);
+
+  --muted: oklch(0.26 0.012 165);
+  --muted-foreground: oklch(0.72 0.01 160);
+
+  --accent: oklch(0.28 0.04 150);
+  --accent-foreground: oklch(0.98 0 0);
+
+  --destructive: oklch(0.62 0.23 25);
+
+  --border: oklch(0.3 0.02 160);
+  --input: oklch(0.3 0.02 160);
+  --ring: oklch(0.85 0.24 145);
+
+  --radius: 0.75rem;
+
+  /* Tokens da marca */
+  --radar: oklch(0.85 0.24 145);
+  --radar-foreground: oklch(0.16 0.02 160);
+  --promo: oklch(0.88 0.18 95);
+  --promo-foreground: oklch(0.2 0.04 90);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 18px color-mix(in oklch, var(--radar) 55%, transparent);
+  }
+  .shadow-glow {
+    box-shadow: 0 0 24px color-mix(in oklch, var(--radar) 35%, transparent);
+  }
+}
+
+/* Animações do radar / popup VIP */
+@keyframes radar-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes vip-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--radar) 55%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 14px color-mix(in oklch, var(--radar) 0%, transparent);
+  }
+}
+.animate-vip-pulse {
+  animation: vip-pulse 2s ease-out infinite;
+}
+@keyframes ping-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
