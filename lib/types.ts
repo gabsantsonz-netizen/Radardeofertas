@@ -33,12 +33,14 @@ export type Categoria = {
 export type Video = {
   id: string
   nome: string
+  descricao?: string
   thumbnail?: string
   videoUrl?: string // link externo ou arquivo
   produtoRelacionado?: string // id do produto
   linkAfiliado?: string
   ordem?: number
   ativo?: boolean
+  publicadoEm?: string // ISO date
 }
 
 export type Settings = {

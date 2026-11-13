@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Início', href: '#inicio' },
   { label: 'Ofertas', href: '#ofertas' },
   { label: 'Categorias', href: '#categorias' },
+  { label: 'Vídeos', href: '#videos' },
   { label: 'Redes Sociais', href: '#redes' },
 ]
 

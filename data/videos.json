@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "creme-avela-metade-calorias",
+    "nome": "Creme de avelã com metade das calorias e 0 g de açúcar",
+    "descricao": "Tem avelã de verdade, 50% menos calorias que o creme de avelã comum e não leva a lupa de \"alto em açúcar\".",
+    "thumbnail": "/videos/canetas/thumb-creme-avela.jpg",
+    "videoUrl": "/videos/canetas/creme-avela-metade-calorias.mp4",
+    "ordem": 1,
+    "ativo": true,
+    "publicadoEm": "2026-11-13T19:45:00.000Z"
+  }
+]

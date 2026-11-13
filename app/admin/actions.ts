@@ -255,7 +255,10 @@ export async function salvarVideo(prevState: unknown, formDataArg?: FormData) {
     thumbnail = undefined
   }
 
+  const existente = videos.find((v) => v.id === idExistente)
   const dados: Video = {
+    // preserva campos que o formulário não edita (descricao, publicadoEm)
+    ...existente,
     id: idExistente || gerarId(nome) || `video-${Date.now()}`,
     nome,
     thumbnail,
@@ -265,6 +268,7 @@ export async function salvarVideo(prevState: unknown, formDataArg?: FormData) {
     linkAfiliado: String(formData.get('linkAfiliado') ?? '').trim() || undefined,
     ordem: Number(formData.get('ordem') ?? 0),
     ativo: formData.get('ativo') === 'on',
+    publicadoEm: existente?.publicadoEm ?? new Date().toISOString(),
   }
 
   const indice = videos.findIndex((v) => v.id === idExistente)
